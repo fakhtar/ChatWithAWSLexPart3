@@ -136,7 +136,7 @@ async function makeAjaxCall(params) {
     $(".direct-chat-messages").animate({ scrollTop: $('.direct-chat-messages').prop("scrollHeight") }, 1000);
 }
 // Find sample code here https://github.com/awsdocs/amazon-lex-developer-guide/blob/master/example_apps/agent_assistance_bot/index.html
-$(document).ready(function () {
+jQuery(function() {
     // Initialize the Amazon Cognito credentials provider
     // Provide the region of your AWS account below
     AWS.config.region = 'us-east-1'; // Region
@@ -156,13 +156,13 @@ $(document).ready(function () {
     // The first message is displayed to the user
     displayLeftMessage('Welcome to chat. You can say tell me a joke or tell me a fact');
     // pressing enter button will cause the message to be submitted.
-    $("input[type=text][name=message]").keyup(function (event) {
+    $("input[type=text][name=message]").on('keyup',function (event) {
         if (event.which === 13) {
             makeAjaxCall(my_params);
         }
     });
     // bind a click even to the sene message button that will take the value of the text
-    $("#sendButton").bind("click", function () {
+    $("#sendButton").on("click", function () {
         makeAjaxCall(my_params);
     });
 });
