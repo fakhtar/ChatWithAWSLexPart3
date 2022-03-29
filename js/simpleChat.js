@@ -142,7 +142,7 @@ jQuery(function() {
     AWS.config.region = 'us-east-1'; // Region
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
         // Provide your Pool Id below
-        IdentityPoolId: 'us-east-1:4b5d2540-cd51-4b27-9e78-6cb6b99bc0e6',
+        IdentityPoolId: 'us-east-1:44a1759a-a1c8-4db1-b11a-05ed1557e74f',
     });
     var lexUserId = 'chatbot-demo' + Date.now();
     var sessionAttributes = {};
